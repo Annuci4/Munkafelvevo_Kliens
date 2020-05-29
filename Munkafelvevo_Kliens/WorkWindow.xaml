@@ -1,0 +1,77 @@
+﻿<Window x:Class="Munkafelvevo_Kliens.WorkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Munkafelvevo_Kliens"
+        mc:Ignorable="d"
+        Title="WorkWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="272*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,-0.4,50" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Content="First name" Margin="10"/>
+            <TextBox Grid.Column="1" Grid.Row="0" x:Name="FirstNameTextBox" Margin="10"/>
+
+            <Label Grid.Column="0" Grid.Row="1" Content="Last name" Margin="10"/>
+            <TextBox Grid.Column="1" Grid.Row="1" x:Name="LastNameTextBox" Margin="10"/>
+
+            <Label Grid.Column="0" Grid.Row="2" Content="Date" Margin="10"/>
+            <DatePicker Grid.Row="2" Grid.Column="1" x:Name="DateDatePicker" Margin="10"/>
+
+            <Label Grid.Column="0" Grid.Row="3" Content="Type of car" Margin="10"/>
+            <TextBox Grid.Column="1" Grid.Row="3" x:Name="TypeofcarTextBox" Margin="10"/>
+
+            <Label Grid.Column="0" Grid.Row="4" Content="Licence plate (AAA-111)" Margin="10"/>
+            <TextBox Grid.Column="1" Grid.Row="4" x:Name="LicencePlateTextBox" Margin="10"/>
+
+            <Label Grid.Column="0" Grid.Row="5" Content="State of work:"  Margin="10"/>
+            <ComboBox  Grid.Column="1" Grid.Row="5" Width="auto" x:Name="StateOfWorkCombobox" Margin="10">
+                <ComboBoxItem IsSelected="True">Felvett munka</ComboBoxItem>
+                <ComboBoxItem>Elvégzés alatt</ComboBoxItem>
+                <ComboBoxItem>Elvégzett</ComboBoxItem>
+            </ComboBox>
+
+            <Label Grid.Column="0" Grid.Row="6" Content="Issues" Margin="10"/>
+            <TextBox Grid.Column="1" Grid.Row="6" x:Name="IssuesTextBox" Margin="10"/>
+
+        </Grid>
+
+        <StackPanel 
+            Grid.Row="1" 
+            Orientation="Horizontal" 
+            VerticalAlignment="Bottom" 
+            Grid.ColumnSpan="3" 
+            Margin="0,0,-0.4,0.4"
+            HorizontalAlignment="Right">
+            <Button x:Name="CreateButton" Content="Create" Width="80" Margin="10" Click="CreateButton_Click"/>
+
+            <Button x:Name="UpdateButton" Content="Update" Width="80" Margin="10" Click="UpdateButton_Click"/>
+
+            <Button x:Name="DeleteButton" Content="Delete" Width="80" Margin="10" Click="DeleteButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
